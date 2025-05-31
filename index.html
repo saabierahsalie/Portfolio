@@ -108,165 +108,14 @@
         }
 
         /* Hero Section */
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+           
             position: relative;
             overflow: hidden;
-        }
-
-        /* Hero Side Elements */
-        .hero-side-left, .hero-side-right {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 200px;
-            height: 80%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-side-left {
-            left: -50px;
-        }
-
-        .hero-side-right {
-            right: -50px;
-        }
-
-        /* Floating Code Snippets */
-        .code-snippet {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 10px 15px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--primary-pink);
-            border: 1px solid rgba(255, 107, 157, 0.2);
-            animation: floatCode 8s ease-in-out infinite;
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
-        }
-
-        .code-snippet:nth-child(odd) {
-            animation-delay: -2s;
-            color: var(--accent-purple);
-            border-color: rgba(139, 92, 246, 0.2);
-        }
-
-        .code-snippet:nth-child(3n) {
-            animation-delay: -4s;
-            animation-duration: 10s;
-        }
-
-        @keyframes floatCode {
-            0%, 100% { 
-                transform: translateY(0) rotate(0deg); 
-                opacity: 0.7;
-            }
-            25% { 
-                transform: translateY(-20px) rotate(1deg); 
-                opacity: 1;
-            }
-            50% { 
-                transform: translateY(-10px) rotate(-0.5deg); 
-                opacity: 0.8;
-            }
-            75% { 
-                transform: translateY(-30px) rotate(0.5deg); 
-                opacity: 0.9;
-            }
-        }
-
-        /* Geometric Shapes */
-        .geometric-shape {
-            position: absolute;
-            border-radius: 20% 80% 60% 40%;
-            background: linear-gradient(45deg, var(--primary-pink), var(--accent-purple));
-            opacity: 0.1;
-            animation: morphShape 12s ease-in-out infinite;
-        }
-
-        .geometric-shape:nth-child(even) {
-            border-radius: 60% 40% 20% 80%;
-            animation-delay: -6s;
-            background: linear-gradient(-45deg, var(--accent-purple), var(--primary-pink));
-        }
-
-        @keyframes morphShape {
-            0%, 100% { 
-                border-radius: 20% 80% 60% 40%;
-                transform: rotate(0deg) scale(1);
-            }
-            25% { 
-                border-radius: 60% 40% 80% 20%;
-                transform: rotate(90deg) scale(1.1);
-            }
-            50% { 
-                border-radius: 80% 20% 40% 60%;
-                transform: rotate(180deg) scale(0.9);
-            }
-            75% { 
-                border-radius: 40% 60% 20% 80%;
-                transform: rotate(270deg) scale(1.05);
-            }
-        }
-
-        /* Tech Icons */
-        .tech-icon {
-            position: absolute;
-            font-size: 2rem;
-            color: var(--primary-pink);
-            opacity: 0.3;
-            animation: floatIcon 6s ease-in-out infinite;
-        }
-
-        .tech-icon:nth-child(odd) {
-            color: var(--accent-purple);
-            animation-delay: -3s;
-        }
-
-        @keyframes floatIcon {
-            0%, 100% { 
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.3;
-            }
-            50% { 
-                transform: translateY(-25px) rotate(180deg);
-                opacity: 0.6;
-            }
-        }
-
-        /* Binary Rain */
-        .binary-rain {
-            position: absolute;
-            top: 0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            color: var(--primary-pink);
-            opacity: 0.1;
-            animation: binaryFall linear infinite;
-            line-height: 16px;
-        }
-
-        @keyframes binaryFall {
-            0% {
-                transform: translateY(-100vh);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.2;
-            }
-            90% {
-                opacity: 0.1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
+            
         }
 
         .hero-content {
@@ -450,6 +299,42 @@
             opacity: 0.1;
             z-index: -1;
         }
+
+     #fun-facts .card-custom {
+        transition: box-shadow 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
+    #fun-facts .card-custom:hover {
+        box-shadow: 0 8px 32px 2px #ff6b9d44;
+        transform: scale(1.02) rotate(-1deg);
+    }
+    #funFactsList li {
+        margin-bottom: 18px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: funFactIn 0.6s forwards;
+        background: linear-gradient(85deg, #fff0f5 70%, #ffc1e3 100%);
+        border-radius: 12px;
+        padding: 12px 20px;
+        box-shadow: 0 1px 7px #8b5cf61a;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.1rem;
+    }
+    @keyframes funFactIn {
+        0% { opacity: 0; transform: translateY(20px);}
+        90% { opacity: 1; transform: translateY(-6px);}
+        100% { opacity: 1; transform: translateY(0);}
+    }
+    #nextFunFact {
+        box-shadow: 0 2px 16px #ffc1e366;
+        border-radius: 40px;
+        font-weight: 600;
+    }
+    #nextFunFact:hover {
+        background: linear-gradient(135deg, #8b5cf6, #ff6b9d);
+        color: #fff;
+        transform: scale(1.08);
+    }
 
         /* Section Styling */
         .section {
@@ -802,6 +687,44 @@
         </div>
     </section>
 
+    <!-- Fun Facts Section -->
+    <section id="fun-facts" class="section scroll-animation">
+        <div class="container">
+            <h2 class="section-title">💡 Fun Facts About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card-custom">
+                        <div class="card-body p-5">
+                            <ul class="list-unstyled fs-5" id="funFactsList">
+                                <li>🐼 I watch live panda cams before I code — it's my unusual but effective way of
+                                    mentally prepping for the logic puzzles ahead.</li>
+                                    
+                                <li>🍌 I'm allergic to bananas — which means even my snack choices have edge-case
+                                    constraints.</li>
+                                <li>🛹 I once tried skateboarding and ended up with 10 stitches... turns out I debug
+                                    better than I balance.</li>
+                                <li>💻 I wrote my first line of code at 15 — I cried because I thought I'd never
+                                    understand it. That same month? I got 100% on my coding practical.</li>
+                                
+                                <li>🎧 My favourite song to code to? Childish Gambino’s <em>“Me and Your Mama”</em> — it
+                                    turns every bug hunt into a cinematic montage.</li>
+                            
+                                <li>📂 I once broke a project by deleting the wrong folder — now I treat version control
+                                    like a sacred ritual.</li>
+                                
+                            </ul>
+                            <div class="text-center mt-4">
+                                <button id="nextFunFact" class="btn btn-primary glow" type="button">
+                                    <i class="fas fa-random me-2"></i>Show Me Another!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="section scroll-animation">
         <div class="container">
@@ -1023,6 +946,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Smooth scrolling for navigation links
+        document.addEventListener("DOMContentLoaded", function() {
+        const funFacts = [
+            "🐼 I watch live panda cams before I code — it's my unusual but effective way of mentally prepping for the logic puzzles ahead.",
+            "🍌 I'm allergic to bananas — which means even my snack choices have edge-case constraints.",
+            "🛹 I once tried skateboarding and ended up with 10 stitches... turns out I debug better than I balance.",
+            "💻 I wrote my first line of code at 15 — I cried because I thought I'd never understand it. That same month? I got 100% on my coding practical.",            "🐼 I watch live panda cams before I code — it's my unusual but effective way of mentally prepping for the logic puzzles ahead.",
+            "🎧 My favourite song to code to? Childish Gambino’s <em>“Me and Your Mama”</em> — it turns every bug hunt into a cinematic montage.",
+            "📂 I once broke a project by deleting the wrong folder — now I treat version control like a sacred ritual.",
+           
+        ];
+        const funFactsList = document.getElementById("funFactsList");
+        const nextBtn = document.getElementById("nextFunFact");
+        let currentFactIndex = 0;
+
+        function showFact(index) {
+            funFactsList.innerHTML = "";
+            setTimeout(() => {
+                const li = document.createElement("li");
+                li.innerHTML = funFacts[index];
+                funFactsList.appendChild(li);
+            }, 80);
+        }
+
+        nextBtn.addEventListener("click", function() {
+            currentFactIndex = (currentFactIndex + 1) % funFacts.length;
+            showFact(currentFactIndex);
+        });
+
+        // Show the first fact on load
+        showFact(currentFactIndex);
+    });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
