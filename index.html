@@ -21,7 +21,21 @@
             --gradient: linear-gradient(135deg, #ff6b9d, #8b5cf6);
             --soft-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
         }
+        #analytics .card-custom {
+            min-height: 170px;
+            transition: transform 0.2s;
+        }
 
+        #analytics .card-custom:hover {
+            transform: scale(1.06) rotate(-1deg);
+            box-shadow: 0 8px 32px 2px #ff6b9d44;
+        }
+
+        #devPieChart {
+            max-width: 260px;
+            margin: 0 auto;
+            display: block;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -688,42 +702,7 @@
     </section>
 
     <!-- Fun Facts Section -->
-    <section id="fun-facts" class="section scroll-animation">
-        <div class="container">
-            <h2 class="section-title">💡 Fun Facts About Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card-custom">
-                        <div class="card-body p-5">
-                            <ul class="list-unstyled fs-5" id="funFactsList">
-                                <li>🐼 I watch live panda cams before I code — it's my unusual but effective way of
-                                    mentally prepping for the logic puzzles ahead.</li>
-                                    
-                                <li>🍌 I'm allergic to bananas — which means even my snack choices have edge-case
-                                    constraints.</li>
-                                <li>🛹 I once tried skateboarding and ended up with 10 stitches... turns out I debug
-                                    better than I balance.</li>
-                                <li>💻 I wrote my first line of code at 15 — I cried because I thought I'd never
-                                    understand it. That same month? I got 100% on my coding practical.</li>
-                                
-                                <li>🎧 My favourite song to code to? Childish Gambino’s <em>“Me and Your Mama”</em> — it
-                                    turns every bug hunt into a cinematic montage.</li>
-                            
-                                <li>📂 I once broke a project by deleting the wrong folder — now I treat version control
-                                    like a sacred ritual.</li>
-                                
-                            </ul>
-                            <div class="text-center mt-4">
-                                <button id="nextFunFact" class="btn btn-primary glow" type="button">
-                                    <i class="fas fa-random me-2"></i>Show Me Another!
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Skills Section -->
     <section id="skills" class="section scroll-animation">
@@ -872,7 +851,110 @@
             </div>
         </div>
     </section>
+    <section id="fun-facts" class="section scroll-animation">
+        <div class="container">
+            <h2 class="section-title">💡 Fun Facts About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card-custom">
+                        <div class="card-body p-5">
+                            <ul class="list-unstyled fs-5" id="funFactsList">
+                                <li>🐼 I watch live panda cams before I code — it's my unusual but effective way of
+                                    mentally prepping for the logic puzzles ahead.</li>
 
+                                <li>🍌 I'm allergic to bananas — which means even my snack choices have edge-case
+                                    constraints.</li>
+                                <li>🛹 I once tried skateboarding and ended up with 10 stitches... turns out I debug
+                                    better than I balance.</li>
+                                <li>💻 I wrote my first line of code at 15 — I cried because I thought I'd never
+                                    understand it. That same month? I got 100% on my coding practical.</li>
+                                
+                                <li>🎧 My favourite song to code to? Childish Gambino’s <em>“Me and Your Mama”</em> — it
+                                    turns every bug hunt into a cinematic montage.</li>
+                            
+                                <li>📂 I once broke a project by deleting the wrong folder — now I treat version control
+                                    like a sacred ritual.</li>
+                                
+                            </ul>
+                            <div class="text-center mt-4">
+                                <button id="nextFunFact" class="btn btn-primary glow" type="button">
+                                    <i class="fas fa-random me-2"></i>Show Me Another!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Analytics Section -->
+<section id="analytics" class="section scroll-animation">
+    <div class="container">
+        <h2 class="section-title">📊 Developer Analytics</h2>
+        <p class="text-muted mb-4" style="font-size:1rem;">A totally accurate breakdown of a developer's life</p>
+        <div class="row justify-content-center text-center gy-4">
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">⌛</div>
+                    <div class="display-6 fw-bold" id="yearsCoding">0</div>
+                    <div class="text-muted">Years Coding</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">☕</div>
+                    <div class="display-6 fw-bold" id="coffeesDrank">0</div>
+                    <div class="text-muted">Coffees Drank</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">💻</div>
+                    <div class="display-6 fw-bold" id="linesOfCode">0</div>
+                    <div class="text-muted">Lines of Code</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">🐞</div>
+                    <div class="display-6 fw-bold" id="bugsDebugged">0</div>
+                    <div class="text-muted">Bugs Debugged</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">💾</div>
+                    <div class="display-6 fw-bold" id="commitsMade">0</div>
+                    <div class="text-muted">Commits Made</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">🌙</div>
+                    <div class="display-6 fw-bold" id="lateNights">0</div>
+                    <div class="text-muted">Late Nights Survived</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">🎹</div>
+                    <div class="display-6 fw-bold" id="keysSmashed">0</div>
+                    <div class="text-muted">Keys Smashed</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card-custom p-4">
+                    <div style="font-size:2.5rem;">😅</div>
+                    <div class="display-6 fw-bold" id="soTabs">0</div>
+                    <div class="text-muted">Stack Overflow Tabs</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <canvas id="devPieChart" width="240" height="240"></canvas>
+        </div>
+    </div>
+</section>
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
@@ -946,12 +1028,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         // Smooth scrolling for navigation links
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    obj.textContent = end.toLocaleString();
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            animateValue("yearsCoding", 0, 8, 1000);
+            animateValue("coffeesDrank", 0, 12742, 1200);
+            animateValue("linesOfCode", 0, 2000000, 1300);
+            animateValue("bugsDebugged", 0, 48215, 1000);
+            animateValue("commitsMade", 0, 7854, 1000);
+            animateValue("lateNights", 0, 362, 1000);
+            animateValue("keysSmashed", 0, 103550, 1200);
+            animateValue("soTabs", 0, 2198, 1000);
+
+            // Pie chart fun breakdown
+            const ctx = document.getElementById('devPieChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'Coding',
+                        'Debugging',
+                        'Googling Errors',
+                        'Drinking Coffee',
+                        'Staring Blankly',
+                        'Refactoring'
+                    ],
+                    datasets: [{
+                        data: [28, 23, 18, 12, 11, 8],
+                        backgroundColor: [
+                            '#ff6b9d',
+                            '#8b5cf6',
+                            '#fbbf24',
+                            '#2dd4bf',
+                            '#a3e635',
+                            '#f87171'
+                        ]
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
         document.addEventListener("DOMContentLoaded", function() {
         const funFacts = [
             "🐼 I watch live panda cams before I code — it's my unusual but effective way of mentally prepping for the logic puzzles ahead.",
             "🍌 I'm allergic to bananas — which means even my snack choices have edge-case constraints.",
             "🛹 I once tried skateboarding and ended up with 10 stitches... turns out I debug better than I balance.",
-            "💻 I wrote my first line of code at 15 — I cried because I thought I'd never understand it. That same month? I got 100% on my coding practical.",            "🐼 I watch live panda cams before I code — it's my unusual but effective way of mentally prepping for the logic puzzles ahead.",
+            "💻 I wrote my first line of code at 15 — I cried because I thought I'd never understand it. That same month? I got 100% on my coding practical.",            
             "🎧 My favourite song to code to? Childish Gambino’s <em>“Me and Your Mama”</em> — it turns every bug hunt into a cinematic montage.",
             "📂 I once broke a project by deleting the wrong folder — now I treat version control like a sacred ritual.",
            
